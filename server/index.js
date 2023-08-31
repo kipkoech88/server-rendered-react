@@ -37,6 +37,10 @@ const app = express();
 
 app.use(express.static("dist"));
 
+app.get("/data", async(req, res)=>{
+    res.json(data)
+})
+
 app.get("/", (req, res)=>{
     const index = readFileSync("./public/index.html", "utf-8");
 

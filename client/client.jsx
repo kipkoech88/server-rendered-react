@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
+import { handleModifyAnwerVotes } from '../shared/utility';
 
 let state = undefined;
 
@@ -12,10 +13,16 @@ fetch("https://localhost:777/data")
         render();
     })
 // ReactDOM.render(<App/>, 
-// document.querySelector("#Container"))
+// document.querySelector("#Container"))s
+
+function handleVote(answerId, increment){
+    state.answer = handleModifyAnwerVotes(state.answerId, answerId, increment);
+
+    render();
+}
 
 function render() {
-    ReactDOM.hydrate(<App/>, document.querySelector("#Container"))
+    ReactDOM.hydrate(<App {... state} handleModifyAnwerVotes={handleModifyAnwerVotes} />, document.querySelector("#Container"))
 }
 
 // render();

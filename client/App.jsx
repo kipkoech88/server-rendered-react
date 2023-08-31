@@ -6,7 +6,7 @@ export const App = ({questions, answers})=>{
         <div>
             <h1>Q&A Tool</h1>
 
-            {questions.map(({questionId, content})=>(
+            {questions.map(({questionId, content, handleModifyAnwerVotes})=>(
                 <div key={questionId}>
                     <h3>{content}</h3>
                     <div>
@@ -15,6 +15,8 @@ export const App = ({questions, answers})=>{
                                 <span>
                                     {content} - {upvotes}
                                 </span>
+                                <button onClick={()=>handleModifyAnwerVotes(answerId, 1)}>+</button>
+                                <button onClick={()=>handleModifyAnwerVotes(answerId, -1)}>-</button>
                         </div>
                     ))}
                     </div>

@@ -10,7 +10,7 @@ import { App } from '../client/App';
 const data = {
     questions:[
         {
-            questionId:"q1",
+            questionId:"Q1",
             content:"should we use JQuery, fetch or Ajax"
         },
         {
